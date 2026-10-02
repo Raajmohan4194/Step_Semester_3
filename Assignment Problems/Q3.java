@@ -1,0 +1,42 @@
+import java.util.Scanner;
+
+class Employee {
+    String empId;
+    String empName;
+    double salary;
+    boolean isIntern;
+
+    public Employee(String empId, String empName, double salary) {
+        this.empId = empId;
+        this.empName = empName;
+        this.salary = salary;
+        this.isIntern = false;
+    }
+
+    public Employee(String empId, String empName) {
+        this(empId, empName, 0);
+        this.isIntern = true;
+    }
+
+    public void printProfile() {
+        System.out.println(empId + " | " + empName + " | Rs " + salary + " | Intern: " + isIntern);
+    }
+}
+
+public class Q3 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String permId = sc.next();
+        String permName = sc.next();
+        double permSalary = sc.nextDouble();
+        Employee emp1 = new Employee(permId, permName, permSalary);
+
+        String internId = sc.next();
+        String internName = sc.next();
+        Employee emp2 = new Employee(internId, internName);
+
+        emp1.printProfile();
+        emp2.printProfile();
+        sc.close();
+    }
+}
